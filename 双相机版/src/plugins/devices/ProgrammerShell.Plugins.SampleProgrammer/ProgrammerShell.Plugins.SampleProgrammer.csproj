@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <AssemblyName>ProgrammerShell.Plugins.SampleProgrammer</AssemblyName>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <Platforms>AnyCPU;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\ProgrammerShell.Core\ProgrammerShell.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OpenCvSharp4" Version="4.10.0.20240616" />
+    <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.10.0.20240616" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="plugin.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <Target Name="CopyPluginToApp" AfterTargets="Build" Condition="'$(SolutionDir)' != '' and !$(SolutionDir.Contains('*Undefined*'))">
+    <PropertyGroup>
+      <_PluginId>sample-programmer</_PluginId>
+      <_PluginOutDir>$(SolutionDir)src\ProgrammerShell.App\bin\$(Configuration)\net8.0-windows\app\plugins\$(_PluginId)\</_PluginOutDir>
+    </PropertyGroup>
+    <MakeDir Directories="$(_PluginOutDir)" />
+    <ItemGroup>
+      <_PluginFiles Include="$(TargetDir)**\*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(_PluginFiles)" DestinationFolder="$(_PluginOutDir)%(RecursiveDir)" SkipUnchangedFiles="true" />
+  </Target>
+</Project>

@@ -1,0 +1,152 @@
+ProgrammerShell 程序技术说明文档
+
+一、程序定位与目标
+ProgrammerShell 是一个基于 .NET 8 + WPF 的工业视觉检测桌面程序，围绕“多相机采集 + 模板匹配检测 + PLC 联动”构建。程序支持最多 4 路相机并行工作，支持真实工业相机插件与虚拟相机插件，适用于缺陷检测、到位检测、外观一致性检测等场景。
+
+二、总体架构
+程序采用“应用层 + 核心抽象层 + 功能模块层 + 插件层”的分层架构：
+1) 应用层（src/ProgrammerShell.App）
+- 提供主界面、设备映射窗口、日志输出与运行时调度。
+- 负责将相机、检测器、PLC 通信进行端到端串联。
+
+2) 核心抽象层（src/ProgrammerShell.Core）
+- 定义设备标准接口：IDevice、ICamera、IDeviceFactory、IDeviceManager 等。
+- 通过接口隔离具体硬件 SDK，保证插件可替换、可扩展。
+
+3) 功能模块层
+- Inspection（src/features/ProgrammerShell.Features.Inspection）：模板匹配检测、结果图保存、图片保留策略、PLC 通信。
+- Flasher（src/features/ProgrammerShell.Features.Flasher）：预留功能模块，当前完成了基本服务注册与示例命令。
+
+4) 设备插件层（src/plugins/devices）
+- RealProgrammer：真实工业相机插件（MVS SDK）。
+- SampleProgrammer：虚拟设备/模拟相机插件，用于离线联调与演示。
+
+三、启动与生命周期
+1) 应用启动流程（App.xaml.cs）
+- 构建 Host（依赖注入 + 日志系统）。
+- 注册核心服务：DeviceManager、PluginLoader、MainWindowViewModel、MainWindow。
+- 扫描插件并发现工厂。
+- 显示主窗口。
+
+2) 应用退出流程
+- 统一调用 DeviceManager.ShutdownAsync() 释放活动设备。
+- 关闭 Host 并回收资源。
+
+四、主界面与交互（MainWindow）
+1) 界面结构（MainWindow.xaml）
+- 左侧：设备映射入口、4 路相机控制卡片（勾选连接、开始/停止采集、软触发、计数复位）。
+- 右侧：2x2 实时图像预览区，每路显示检测结果文本（OK/NG）。
+- 底部：PLC 连接区与 RX/TX 日志区。
+
+2) 核心运行状态（MainWindow.xaml.cs）
+- _camerasByIndex：管理 1~4 号相机实例。
+- _isGrabbingByIndex：每路采集状态。
+- _isFrozenByIndex：软触发后冻结画面，防止实时帧覆盖结果图。
+- _cameraCaptureCounts：每路采集次数统计。
+- _processorsByIndex：每路检测处理器实例。
+
+3) 关键交互逻辑
+- 勾选相机：触发连接/断开，更新按钮可用状态。
+- 开始采集：相机进入抓流状态，可实时预览。
+- 软触发：请求单帧采集，等待落盘图像并进行检测。
+- 检测完成：更新结果文字与颜色，显示标注图，并按规则回写 PLC。
+
+五、设备管理与插件加载
+1) 设备管理器（DeviceManager）
+- 扫描多个插件根路径，去重加载工厂。
+- 维护工厂列表与活动设备列表。
+- 提供按 deviceType/deviceId 创建设备能力。
+- 统一关停与释放设备资源。
+
+2) 插件加载器（PluginLoader）
+- 递归查找 plugin.json。
+- 按 manifest 加载入口程序集与入口类型。
+- 调用 Initialize(loggerFactory) 与 GetDeviceFactories()。
+- 支持超时隔离，避免单个插件阻塞整体启动。
+
+六、设备映射机制
+1) 映射窗口（DeviceMappingWindow）
+- 显示可选工厂与设备清单。
+- 支持按 FactoryDeviceType + DeviceId 恢复选择，减少工厂顺序变化带来的映射漂移。
+
+2) 映射持久化
+- 文件：%LocalAppData%/ProgrammerShell/device-mapping.json。
+- 支持旧格式（FactoryIndex）兼容读取。
+
+七、检测子系统（Inspection）
+1) 图像处理器（ImageProcessor）
+- 输入：触发后采集图路径。
+- 检查文件是否稳定可读（大小与重试机制）。
+- 灰度归一化后执行模板匹配。
+- 输出 DetectionResult（Result、PLCResult、ColorDetected、SavePath）。
+
+2) 模板匹配器（TemplateMatchDetector）
+- 模板来源：templates/default 下每路对应 yml + bmp。
+- 算法流程：ROI 搜索 + CLAHE 增强 + MatchTemplate(CCoeffNormed) + 阈值判定。
+- 结果绘制：绿色框表示匹配成功，红框表示失败，叠加 OK/NG 文本。
+
+3) 结果图归档与保留
+- 保存路径：photo/ok/{cam} 或 photo/ng/{cam}。
+- 自动清理：ImageRetentionService 按保留期清理历史图片（默认 180 天）。
+
+八、PLC 通信子系统
+1) 通信实现（PLCCommunicator）
+- 使用 TCP 进行 PLC 数据交互。
+- 采用固定 8 字节帧协议，对应 4 路相机结果位。
+
+2) 触发与回写
+- RX：接收 PLC 触发命令（按相机位触发）。
+- MainWindow 组批次任务并发触发相机软触发。
+- 所有目标相机结果汇总后统一回写 WriteBatchStatus()。
+
+3) 异常策略
+- 连接失败自动记录日志。
+- 发送失败尝试重连后重发。
+- 无结果相机写入空位（00,00）以保持协议完整性。
+
+九、相机插件说明
+1) 真实相机插件（RealProgrammer）
+- 工厂类负责枚举设备、按序列号创建相机。
+- MVSCameraDevice 提供连接、软触发、抓流、图像转换与缓存落盘。
+- 采集图缓存于系统临时目录 capture-cache，供后续检测读取。
+
+2) 虚拟相机插件（SampleProgrammer）
+- 可模拟 4 路相机并生成预览帧。
+- 软触发时可从指定路径读取 cam_x.bmp 或生成测试图。
+- 便于在无真实硬件条件下联调完整流程。
+
+十、日志与配置
+1) 日志
+- 控制台、Debug、文件日志并行输出。
+- 文件日志由 FileLoggerProvider 管理。
+
+2) PLC 配置持久化
+- 文件：%LocalAppData%/ProgrammerShell/plc-settings.json。
+- 保存 IP 与端口，程序重启后自动回填。
+
+十一、并发与线程模型
+1) UI 线程与后台线程分离
+- 采集与检测在后台执行。
+- UI 更新统一通过 Dispatcher 回到主线程。
+
+2) 互斥控制
+- PLC 批次结果通过 _plcBatchLock 串行保护。
+- ImageProcessor 使用 SemaphoreSlim 保证单实例串行处理，避免并发写读冲突。
+
+十二、扩展建议
+1) 新增相机品牌
+- 实现 IDevicePlugin + IDeviceFactoryWithSelection + ICamera，即可接入。
+
+2) 新增检测算法
+- 在 Inspection 模块扩展处理器并保持 DetectionResult 输出协议一致。
+
+3) 新增上位系统协议
+- 可在 PLCCommunicator 外抽象通信接口，扩展至 Modbus/TCP、OPC UA 或自定义协议。
+
+十三、当前程序特征总结
+- 架构清晰：核心接口与硬件实现解耦。
+- 工业可用：支持批次触发、结果归档、持久化配置。
+- 易于维护：插件化加载、分层清晰、日志完善。
+- 易于联调：内置虚拟相机路径，支持离线仿真。
+
+（文档版本：v1.0）

@@ -1,0 +1,5 @@
+{
+ "pluginId": "real-programmer",
+ "entryAssembly": "ProgrammerShell.Plugins.RealProgrammer.dll",
+  "entryType": "ProgrammerShell.Plugins.RealProgrammer.Plugin"
+}

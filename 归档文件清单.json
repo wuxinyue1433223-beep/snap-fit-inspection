@@ -1,0 +1,642 @@
+[
+  {
+    "path": "双相机版/.github/copilot-instructions.md",
+    "bytes": 181,
+    "sha256": "5f88fd2fec2a54c09392d20b30a8aeae80cda569c365662516a9be7bb2ad5d36"
+  },
+  {
+    "path": "双相机版/ProgrammerShell.sln",
+    "bytes": 5872,
+    "sha256": "b6986d2176dc4eea197e308d7bb89027acbd7376abbf0f140f4a8a87cd16670e"
+  },
+  {
+    "path": "双相机版/build.bat",
+    "bytes": 1100,
+    "sha256": "b7e6c489bd97392966ef227f846e02b252fdc151f956bb3c8b1a0c16d594a437"
+  },
+  {
+    "path": "双相机版/hsv_config.json",
+    "bytes": 190,
+    "sha256": "f953f0fc05c111b3108d42b9084e03196874d6d0ba21ac914d7752718a9a1346"
+  },
+  {
+    "path": "双相机版/inspection_settings.json",
+    "bytes": 39,
+    "sha256": "cb32030e048ecbc573a2cfca5f4c84618f4f01628c6bd451f3d9cee45d7defd0"
+  },
+  {
+    "path": "双相机版/src/Directory.Build.props",
+    "bytes": 232,
+    "sha256": "d597b1a7158365a6bc1ab6342a669983d93a5e09047c25edb5265e86327be456"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.App/App.xaml",
+    "bytes": 243,
+    "sha256": "6f5a9065b444c760306448e837fdeefb8996c2bb5ec4121c368e8371f3d3b672"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.App/App.xaml.cs",
+    "bytes": 1613,
+    "sha256": "bd97c58b06a3221304ed6bdcc47f2e80b9d882d90bc77ee41603baa99ac34a40"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.App/CameraPanelViewModel.cs",
+    "bytes": 1178,
+    "sha256": "44bf636fe4061bc12e1129663d8e535902593b23fc925d7f8fccaa885d2df8e2"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.App/DeviceMappingWindow.xaml",
+    "bytes": 1420,
+    "sha256": "9de992387851bce029d23286c7099c4e37dcb4b16bfc09d212e378f38854a2cc"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.App/DeviceMappingWindow.xaml.cs",
+    "bytes": 5090,
+    "sha256": "65778d85021a413161cc4e7b24a87abd1b16ba2dd58af7cac2b03391a7d60734"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.App/MainWindow.xaml",
+    "bytes": 12760,
+    "sha256": "61dd39cc41c3a5354c82ccd1237097434074130fab97ed27f6a228a64a748574"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.App/MainWindow.xaml.cs",
+    "bytes": 51979,
+    "sha256": "73e1b130d54a591f0ae52e4d048474499621633d50e63f46418d140d3f6e28fb"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.App/MainWindowViewModel.cs",
+    "bytes": 1076,
+    "sha256": "ec101fae132cb54ea8ed560d4f284a40b5c0f208e89e7f4b4c41c7961643c609"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.App/Models/CameraMappingSelection.cs",
+    "bytes": 337,
+    "sha256": "7c3496bdcddbfa9d80e68228e0b5b6db7b7b978911924fd73b2e8abd01b29c37"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.App/ProgrammerShell.App.csproj",
+    "bytes": 1942,
+    "sha256": "b4c56ee1b52909b6b5baf01ffee7ab0e0d973aa7c4886f93953d2910fdb78580"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.App/Properties/PublishProfiles/FolderProfile.pubxml",
+    "bytes": 610,
+    "sha256": "e0410d230d351df03f034473b754463c6504eae49c2965b1164c3b6ef3d68e09"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.App/Services/CameraFactorySelector.cs",
+    "bytes": 1130,
+    "sha256": "e60c0df9969db2ec5e04e5cc35d0a18912a14e2d535dff5b715d9a1244e28216"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.App/Services/DeviceManager.cs",
+    "bytes": 4230,
+    "sha256": "d458ea8c7643b5c608483a07230d749621b68d380d0b3e64b4cc2ebf9e26b528"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.App/Services/FileLoggerProvider.cs",
+    "bytes": 2379,
+    "sha256": "6db398f47f61891e300cc1801d7a249eb29fbbe295fa2456d7c2805637564cef"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.App/Services/LocalVirtualCameraFactory.cs",
+    "bytes": 4704,
+    "sha256": "1811f9067cc68e146e016f3d6ab3571d76a4fc84176d65c34a54a5b7914c63cd"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.App/Services/PluginLoadContext.cs",
+    "bytes": 2965,
+    "sha256": "c1c883801b45fcfa512b3157257bed61c1a076c6f8a7c6e2c171422e1532d694"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.App/Services/PluginLoader.cs",
+    "bytes": 6976,
+    "sha256": "86448720d815e87d5b118bac4025663265406290e1841e6b1512f9c91553d6ec"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.App/Services/PluginManifest.cs",
+    "bytes": 240,
+    "sha256": "6c711feedfacbe04bb346ce1612b8de99951707522a5ab43282ac411c7321a07"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.Core/Interfaces/DeviceState.cs",
+    "bytes": 154,
+    "sha256": "37eb5eeeb7e622ef70f6173598e19494341ef05fe0a33c9bc99b046c812ca30e"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.Core/Interfaces/ICamera.cs",
+    "bytes": 566,
+    "sha256": "1033b96504007160a49333d3f84c5d26a33017e2bd165fca00c690aca1a15fa4"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.Core/Interfaces/IDevice.cs",
+    "bytes": 345,
+    "sha256": "84b0041128288eb3e3fff45849200631234a23ab5b126b6808867bd266d27568"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.Core/Interfaces/IDeviceFactory.cs",
+    "bytes": 316,
+    "sha256": "6f50a502b04bd5f2ec947289d4b8437a6e8da249377118faf60de444a6ba39c9"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.Core/Interfaces/IDeviceFactoryWithSelection.cs",
+    "bytes": 354,
+    "sha256": "54ada5b26c25a8566df86c16d1197fd355af425eb37ccbe8b1167d61415f7aa7"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.Core/Interfaces/IDeviceManager.cs",
+    "bytes": 491,
+    "sha256": "fe2c2fd9fd873814beb39de961ede64321f0ea492d729151a53bb672b2ba8508"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.Core/Interfaces/IDevicePlugin.cs",
+    "bytes": 224,
+    "sha256": "9339e337143a5a03e42bcab9c297e9d9282c3a40ef7f1bd8bc7121840a1ab92c"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.Core/Interfaces/IProgrammer.cs",
+    "bytes": 337,
+    "sha256": "6c33e678e0339d977cc08b802bb8960a3b257ab4f3147a7b3996fefd95d3f6e0"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.Core/Interfaces/Regions/AppRegion.cs",
+    "bytes": 93,
+    "sha256": "b8715097781d0341d2468c0787b3537678a11c2a28b4dbc9dc404f6cd41de34f"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.Core/Interfaces/Regions/IRegionFactoryRegistration.cs",
+    "bytes": 202,
+    "sha256": "fd05f63a1d41a9147453d1702cd3fec0ed90bd2d617745b9793d32fcf2e1858c"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.Core/Models/ProgrammerInfo.cs",
+    "bytes": 140,
+    "sha256": "d8b04f7562154b27b5d43aa83198d29d5b40217a64325c0232f741fa18742275"
+  },
+  {
+    "path": "双相机版/src/ProgrammerShell.Core/ProgrammerShell.Core.csproj",
+    "bytes": 362,
+    "sha256": "dadcbf93c6719a4e6343af43a5de7665e0a9ef0a4694b2ab204bef6daa9ad154"
+  },
+  {
+    "path": "双相机版/src/features/ProgrammerShell.Features.Flasher/FlasherFeatureServiceCollectionExtensions.cs",
+    "bytes": 473,
+    "sha256": "3c4954ce601e566cb0ac7ac211a1f62271dffac88b79529c96065fccfbb96968"
+  },
+  {
+    "path": "双相机版/src/features/ProgrammerShell.Features.Flasher/ProgrammerShell.Features.Flasher.csproj",
+    "bytes": 599,
+    "sha256": "c9ebe2b5743af6f587a75e3cecefff6167d4893b6d983d1a7bac18720b68c98e"
+  },
+  {
+    "path": "双相机版/src/features/ProgrammerShell.Features.Flasher/ViewModels/FlasherMainViewModel.cs",
+    "bytes": 880,
+    "sha256": "29e837639cf9ef0bfa46eb30cd9fa58a7c5a8924b5e47fa952a61d0ed7f88f53"
+  },
+  {
+    "path": "双相机版/src/features/ProgrammerShell.Features.Flasher/Views/FlasherMainView.xaml",
+    "bytes": 663,
+    "sha256": "a3c181f2e2663b3c347578a96e6c6978f8940518475e76c7d11a2c6f3359b5dd"
+  },
+  {
+    "path": "双相机版/src/features/ProgrammerShell.Features.Flasher/Views/FlasherMainView.xaml.cs",
+    "bytes": 205,
+    "sha256": "e15901a4a2f3657aada8918fdf82121f2aa9d0830157b6236f3670e2b6b127d8"
+  },
+  {
+    "path": "双相机版/src/features/ProgrammerShell.Features.Inspection/Inspection/DetectionResult.cs",
+    "bytes": 547,
+    "sha256": "38128347d8d6ce0e97d1122edf1abfdd7484aa8a2d09511fde57902bf1f53b15"
+  },
+  {
+    "path": "双相机版/src/features/ProgrammerShell.Features.Inspection/Inspection/FolderMonitor.cs",
+    "bytes": 5912,
+    "sha256": "cca5397065c8c6e99c28ce8294a3721805f64eff17a7fe7491a613a754ca1046"
+  },
+  {
+    "path": "双相机版/src/features/ProgrammerShell.Features.Inspection/Inspection/ImageProcessor.cs",
+    "bytes": 8801,
+    "sha256": "e8029cfea931357d10292dd4417e93e8b783ba4b72b3b338744dfcdc7ba501a4"
+  },
+  {
+    "path": "双相机版/src/features/ProgrammerShell.Features.Inspection/Inspection/ImageRetentionService.cs",
+    "bytes": 2695,
+    "sha256": "64c23e7a3c7aba120b8367c4750bcfa443f4e74cbd06326eabda390d1263349a"
+  },
+  {
+    "path": "双相机版/src/features/ProgrammerShell.Features.Inspection/Inspection/TemplateMatchDetector.cs",
+    "bytes": 13716,
+    "sha256": "6adbb2081215444765a9ee5c94e2110f2d84f5caac2ff1beb8ed2857cd42b81b"
+  },
+  {
+    "path": "双相机版/src/features/ProgrammerShell.Features.Inspection/PLC/PLCCommunicator.cs",
+    "bytes": 12205,
+    "sha256": "d152015ae94741a3fd29cab1562461dfc5ac6f52ea1e287cb6858eaf94065d41"
+  },
+  {
+    "path": "双相机版/src/features/ProgrammerShell.Features.Inspection/ProgrammerShell.Features.Inspection.csproj",
+    "bytes": 765,
+    "sha256": "4f73891e6df428b967b33ff3866c91b014556ba13d1d7aebfce0790455a32e7b"
+  },
+  {
+    "path": "双相机版/src/legacy/MVSDK.cs",
+    "bytes": 398613,
+    "sha256": "dc6ac7a3454d7edfd0835928d665d147f29b2c85e5ac9828b301f8e1b218310d"
+  },
+  {
+    "path": "双相机版/src/plugins/devices/ProgrammerShell.Plugins.RealProgrammer/Factory.cs",
+    "bytes": 8229,
+    "sha256": "9417065c53c3cff66733bbb17ff42f917ec2be8503f0c38fa9b60dd79e1c6487"
+  },
+  {
+    "path": "双相机版/src/plugins/devices/ProgrammerShell.Plugins.RealProgrammer/MVSCameraDevice.cs",
+    "bytes": 26642,
+    "sha256": "245d06d97f038eb74713e54bb814273bba99eed1b64c7533813dfea55b5736cb"
+  },
+  {
+    "path": "双相机版/src/plugins/devices/ProgrammerShell.Plugins.RealProgrammer/MvCameraControl.Net.dll",
+    "bytes": 183808,
+    "sha256": "358d8bca7a71863d62cc14ce0a521bf87d07bc70580dc70296a99723503ec754"
+  },
+  {
+    "path": "双相机版/src/plugins/devices/ProgrammerShell.Plugins.RealProgrammer/Plugin.cs",
+    "bytes": 571,
+    "sha256": "084bf15aa9a1dd7e53b6c813f869d9c438093b0e3d4a66f47d809de687cb88ab"
+  },
+  {
+    "path": "双相机版/src/plugins/devices/ProgrammerShell.Plugins.RealProgrammer/ProgrammerShell.Plugins.RealProgrammer.csproj",
+    "bytes": 1561,
+    "sha256": "3a2a9b537148f9b5cabe334ed8eac88591e207b2f71403d26e4620fd34b1c857"
+  },
+  {
+    "path": "双相机版/src/plugins/devices/ProgrammerShell.Plugins.RealProgrammer/plugin.json",
+    "bytes": 168,
+    "sha256": "72b51a0c5f370594edc44b78c46673d15ee6b64293444a895749fff15e8e69a4"
+  },
+  {
+    "path": "双相机版/src/plugins/devices/ProgrammerShell.Plugins.SampleProgrammer/MVSDK.dll",
+    "bytes": 119808,
+    "sha256": "53030588fc4c0e65e2e75517dc0b9e28f2fdf12fd77cac370228ba3d99bf0cbe"
+  },
+  {
+    "path": "双相机版/src/plugins/devices/ProgrammerShell.Plugins.SampleProgrammer/Plugin.cs",
+    "bytes": 477,
+    "sha256": "307738e3393c3f5b8056c12ec19c33bb3ee9cbda17e14129304ecfd5c07b987b"
+  },
+  {
+    "path": "双相机版/src/plugins/devices/ProgrammerShell.Plugins.SampleProgrammer/ProgrammerShell.Plugins.SampleProgrammer.csproj",
+    "bytes": 1392,
+    "sha256": "ca30c974da55758d9d2b336cf202d81994210b066f2fd50e9012b5af1c90862a"
+  },
+  {
+    "path": "双相机版/src/plugins/devices/ProgrammerShell.Plugins.SampleProgrammer/Properties/PublishProfiles/FolderProfile.pubxml",
+    "bytes": 628,
+    "sha256": "9cf724e95de21cf53aa93a8ad2a088b4bde938283baeb8067185a875765b1e0f"
+  },
+  {
+    "path": "双相机版/src/plugins/devices/ProgrammerShell.Plugins.SampleProgrammer/SampleProgrammerFactory.cs",
+    "bytes": 1943,
+    "sha256": "a0fd051d18180a50047232a014856ba7ee08b87a4ad30e0f5d61ab8e4c46bc6c"
+  },
+  {
+    "path": "双相机版/src/plugins/devices/ProgrammerShell.Plugins.SampleProgrammer/SampleProgrammerPlugin.cs",
+    "bytes": 569,
+    "sha256": "10bb97bce878eab8d08f59ee2b4423ca44df2d55b3a5adde5534757cea0d6824"
+  },
+  {
+    "path": "双相机版/src/plugins/devices/ProgrammerShell.Plugins.SampleProgrammer/SimulatedCamera.cs",
+    "bytes": 10620,
+    "sha256": "811db4b183fbb463bb3994d644b9bde2fead021819224d808d22b9ea12bc1d57"
+  },
+  {
+    "path": "双相机版/src/plugins/devices/ProgrammerShell.Plugins.SampleProgrammer/SimulatedProgrammer.cs",
+    "bytes": 1922,
+    "sha256": "f8e357060de158d32d0a1095aee1e2cbad3a78bc96f6756b01699b4006a1f096"
+  },
+  {
+    "path": "双相机版/src/plugins/devices/ProgrammerShell.Plugins.SampleProgrammer/plugin.json",
+    "bytes": 189,
+    "sha256": "d5b64684921a5707dd4eeacf64bcabd60e264b3841a408f61cbdd1ce08fbeb1a"
+  },
+  {
+    "path": "四相机版/.github/copilot-instructions.md",
+    "bytes": 181,
+    "sha256": "5f88fd2fec2a54c09392d20b30a8aeae80cda569c365662516a9be7bb2ad5d36"
+  },
+  {
+    "path": "四相机版/01.txt",
+    "bytes": 6875,
+    "sha256": "cae12e4d178f45373e1a420f34b7491f478e8ca30f169911a12acd497956957c"
+  },
+  {
+    "path": "四相机版/02.txt",
+    "bytes": 2962,
+    "sha256": "708dc63838e58926371471744e3c756e8894daa8d6eda6866007bc2f7a959521"
+  },
+  {
+    "path": "四相机版/ProgrammerShell.sln",
+    "bytes": 5872,
+    "sha256": "b6986d2176dc4eea197e308d7bb89027acbd7376abbf0f140f4a8a87cd16670e"
+  },
+  {
+    "path": "四相机版/build.bat",
+    "bytes": 1100,
+    "sha256": "b7e6c489bd97392966ef227f846e02b252fdc151f956bb3c8b1a0c16d594a437"
+  },
+  {
+    "path": "四相机版/src/Directory.Build.props",
+    "bytes": 232,
+    "sha256": "d597b1a7158365a6bc1ab6342a669983d93a5e09047c25edb5265e86327be456"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.App/App.xaml",
+    "bytes": 243,
+    "sha256": "6f5a9065b444c760306448e837fdeefb8996c2bb5ec4121c368e8371f3d3b672"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.App/App.xaml.cs",
+    "bytes": 1613,
+    "sha256": "bd97c58b06a3221304ed6bdcc47f2e80b9d882d90bc77ee41603baa99ac34a40"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.App/CameraPanelViewModel.cs",
+    "bytes": 1178,
+    "sha256": "44bf636fe4061bc12e1129663d8e535902593b23fc925d7f8fccaa885d2df8e2"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.App/DeviceMappingWindow.xaml",
+    "bytes": 1866,
+    "sha256": "017c6bcc147a45722d194aa45294e3f199ea0e09016e74b93abe7e337110babe"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.App/DeviceMappingWindow.xaml.cs",
+    "bytes": 5662,
+    "sha256": "5f4288cc5399e3a91d193735bce76b0c0dfa8ae39d12ec50492c68bb67b4be6c"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.App/MainWindow.xaml",
+    "bytes": 15231,
+    "sha256": "40badf5f456cd7279965feb8f55482f500908e0303ebd875e2fca35f0c384c48"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.App/MainWindow.xaml.cs",
+    "bytes": 49099,
+    "sha256": "96a26db49bb8da3f2d2a09b61ff6d8c598160b68903b24372dced79bcb7c3cd5"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.App/MainWindowViewModel.cs",
+    "bytes": 938,
+    "sha256": "409f306328ca6b398a267ae5bc37032d090981fd92690203ffaa6736ec2ed9f2"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.App/Models/CameraMappingSelection.cs",
+    "bytes": 337,
+    "sha256": "7c3496bdcddbfa9d80e68228e0b5b6db7b7b978911924fd73b2e8abd01b29c37"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.App/ProgrammerShell.App.csproj",
+    "bytes": 1840,
+    "sha256": "a1386d1b223f43d24b8eca018bef8911bb7239c3f5771acf0d57fc3ebcd9acd8"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.App/Properties/PublishProfiles/FolderProfile.pubxml",
+    "bytes": 610,
+    "sha256": "e0410d230d351df03f034473b754463c6504eae49c2965b1164c3b6ef3d68e09"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.App/Services/CameraFactorySelector.cs",
+    "bytes": 1130,
+    "sha256": "e60c0df9969db2ec5e04e5cc35d0a18912a14e2d535dff5b715d9a1244e28216"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.App/Services/DeviceManager.cs",
+    "bytes": 4230,
+    "sha256": "d458ea8c7643b5c608483a07230d749621b68d380d0b3e64b4cc2ebf9e26b528"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.App/Services/FileLoggerProvider.cs",
+    "bytes": 2379,
+    "sha256": "6db398f47f61891e300cc1801d7a249eb29fbbe295fa2456d7c2805637564cef"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.App/Services/LocalVirtualCameraFactory.cs",
+    "bytes": 4704,
+    "sha256": "1811f9067cc68e146e016f3d6ab3571d76a4fc84176d65c34a54a5b7914c63cd"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.App/Services/PluginLoadContext.cs",
+    "bytes": 2965,
+    "sha256": "c1c883801b45fcfa512b3157257bed61c1a076c6f8a7c6e2c171422e1532d694"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.App/Services/PluginLoader.cs",
+    "bytes": 6976,
+    "sha256": "86448720d815e87d5b118bac4025663265406290e1841e6b1512f9c91553d6ec"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.App/Services/PluginManifest.cs",
+    "bytes": 240,
+    "sha256": "6c711feedfacbe04bb346ce1612b8de99951707522a5ab43282ac411c7321a07"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.App/inspection.settings.json",
+    "bytes": 31,
+    "sha256": "4a24ed27b4555175e162a76ba668fed464b6ef45c0ac79a072e158e461b0b91d"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.Core/Interfaces/DeviceState.cs",
+    "bytes": 154,
+    "sha256": "37eb5eeeb7e622ef70f6173598e19494341ef05fe0a33c9bc99b046c812ca30e"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.Core/Interfaces/ICamera.cs",
+    "bytes": 566,
+    "sha256": "1033b96504007160a49333d3f84c5d26a33017e2bd165fca00c690aca1a15fa4"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.Core/Interfaces/IDevice.cs",
+    "bytes": 345,
+    "sha256": "84b0041128288eb3e3fff45849200631234a23ab5b126b6808867bd266d27568"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.Core/Interfaces/IDeviceFactory.cs",
+    "bytes": 316,
+    "sha256": "6f50a502b04bd5f2ec947289d4b8437a6e8da249377118faf60de444a6ba39c9"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.Core/Interfaces/IDeviceFactoryWithSelection.cs",
+    "bytes": 354,
+    "sha256": "54ada5b26c25a8566df86c16d1197fd355af425eb37ccbe8b1167d61415f7aa7"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.Core/Interfaces/IDeviceManager.cs",
+    "bytes": 491,
+    "sha256": "fe2c2fd9fd873814beb39de961ede64321f0ea492d729151a53bb672b2ba8508"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.Core/Interfaces/IDevicePlugin.cs",
+    "bytes": 224,
+    "sha256": "9339e337143a5a03e42bcab9c297e9d9282c3a40ef7f1bd8bc7121840a1ab92c"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.Core/Interfaces/IProgrammer.cs",
+    "bytes": 337,
+    "sha256": "6c33e678e0339d977cc08b802bb8960a3b257ab4f3147a7b3996fefd95d3f6e0"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.Core/Interfaces/Regions/AppRegion.cs",
+    "bytes": 93,
+    "sha256": "b8715097781d0341d2468c0787b3537678a11c2a28b4dbc9dc404f6cd41de34f"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.Core/Interfaces/Regions/IRegionFactoryRegistration.cs",
+    "bytes": 202,
+    "sha256": "fd05f63a1d41a9147453d1702cd3fec0ed90bd2d617745b9793d32fcf2e1858c"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.Core/Models/ProgrammerInfo.cs",
+    "bytes": 140,
+    "sha256": "d8b04f7562154b27b5d43aa83198d29d5b40217a64325c0232f741fa18742275"
+  },
+  {
+    "path": "四相机版/src/ProgrammerShell.Core/ProgrammerShell.Core.csproj",
+    "bytes": 307,
+    "sha256": "39493fcbc0be7d0722d80a1515a152805352a15353e4471923cfd7faa11de67d"
+  },
+  {
+    "path": "四相机版/src/features/ProgrammerShell.Features.Flasher/FlasherFeatureServiceCollectionExtensions.cs",
+    "bytes": 473,
+    "sha256": "3c4954ce601e566cb0ac7ac211a1f62271dffac88b79529c96065fccfbb96968"
+  },
+  {
+    "path": "四相机版/src/features/ProgrammerShell.Features.Flasher/ProgrammerShell.Features.Flasher.csproj",
+    "bytes": 544,
+    "sha256": "5933ff4fb8c5a2131edf01c089c9d0ae58fb9c56db4529a02abbee9b52f0a6fd"
+  },
+  {
+    "path": "四相机版/src/features/ProgrammerShell.Features.Flasher/ViewModels/FlasherMainViewModel.cs",
+    "bytes": 880,
+    "sha256": "29e837639cf9ef0bfa46eb30cd9fa58a7c5a8924b5e47fa952a61d0ed7f88f53"
+  },
+  {
+    "path": "四相机版/src/features/ProgrammerShell.Features.Flasher/Views/FlasherMainView.xaml",
+    "bytes": 663,
+    "sha256": "a3c181f2e2663b3c347578a96e6c6978f8940518475e76c7d11a2c6f3359b5dd"
+  },
+  {
+    "path": "四相机版/src/features/ProgrammerShell.Features.Flasher/Views/FlasherMainView.xaml.cs",
+    "bytes": 205,
+    "sha256": "e15901a4a2f3657aada8918fdf82121f2aa9d0830157b6236f3670e2b6b127d8"
+  },
+  {
+    "path": "四相机版/src/features/ProgrammerShell.Features.Inspection/Inspection/DetectionResult.cs",
+    "bytes": 547,
+    "sha256": "38128347d8d6ce0e97d1122edf1abfdd7484aa8a2d09511fde57902bf1f53b15"
+  },
+  {
+    "path": "四相机版/src/features/ProgrammerShell.Features.Inspection/Inspection/FolderMonitor.cs",
+    "bytes": 5912,
+    "sha256": "cca5397065c8c6e99c28ce8294a3721805f64eff17a7fe7491a613a754ca1046"
+  },
+  {
+    "path": "四相机版/src/features/ProgrammerShell.Features.Inspection/Inspection/ImageProcessor.cs",
+    "bytes": 6945,
+    "sha256": "f4468846b375bba51ad1ee96d5658ddb88e8da036a88d20c9e560660cb469cb9"
+  },
+  {
+    "path": "四相机版/src/features/ProgrammerShell.Features.Inspection/Inspection/ImageRetentionService.cs",
+    "bytes": 2694,
+    "sha256": "a5c90e8a1c58be253b980cd86e51555d15d6f38f30bff38b58c9406f68e76eb7"
+  },
+  {
+    "path": "四相机版/src/features/ProgrammerShell.Features.Inspection/Inspection/TemplateMatchDetector.cs",
+    "bytes": 13763,
+    "sha256": "42b47ff2cbd0aa6eed050535ad02dff3323c7eb20b99516ed0e689ac9e5c41a7"
+  },
+  {
+    "path": "四相机版/src/features/ProgrammerShell.Features.Inspection/PLC/PLCCommunicator.cs",
+    "bytes": 12924,
+    "sha256": "f5782cf7d22be36cac23a8f03dc8b822d9f6b330b6a07769642d4015bd6517b5"
+  },
+  {
+    "path": "四相机版/src/features/ProgrammerShell.Features.Inspection/ProgrammerShell.Features.Inspection.csproj",
+    "bytes": 671,
+    "sha256": "a22d7a96b1526f2e099810308e5d9620cebb2ddb2ab0fca987ec06e945c8f79f"
+  },
+  {
+    "path": "四相机版/src/legacy/MVSDK.cs",
+    "bytes": 398613,
+    "sha256": "dc6ac7a3454d7edfd0835928d665d147f29b2c85e5ac9828b301f8e1b218310d"
+  },
+  {
+    "path": "四相机版/src/plugins/devices/ProgrammerShell.Plugins.RealProgrammer/Factory.cs",
+    "bytes": 8229,
+    "sha256": "9417065c53c3cff66733bbb17ff42f917ec2be8503f0c38fa9b60dd79e1c6487"
+  },
+  {
+    "path": "四相机版/src/plugins/devices/ProgrammerShell.Plugins.RealProgrammer/MVSCameraDevice.cs",
+    "bytes": 26662,
+    "sha256": "3cf2472cccbe19cfe74c37970e395ec3d6b679ddb855587bc9e98bc9a75ba6ec"
+  },
+  {
+    "path": "四相机版/src/plugins/devices/ProgrammerShell.Plugins.RealProgrammer/MvCameraControl.Net.dll",
+    "bytes": 183808,
+    "sha256": "358d8bca7a71863d62cc14ce0a521bf87d07bc70580dc70296a99723503ec754"
+  },
+  {
+    "path": "四相机版/src/plugins/devices/ProgrammerShell.Plugins.RealProgrammer/Plugin.cs",
+    "bytes": 571,
+    "sha256": "084bf15aa9a1dd7e53b6c813f869d9c438093b0e3d4a66f47d809de687cb88ab"
+  },
+  {
+    "path": "四相机版/src/plugins/devices/ProgrammerShell.Plugins.RealProgrammer/ProgrammerShell.Plugins.RealProgrammer.csproj",
+    "bytes": 1497,
+    "sha256": "893f1c49d50793215f9e24bb5a93a74a730daa1e933835318d40f8cb1bc3b3cc"
+  },
+  {
+    "path": "四相机版/src/plugins/devices/ProgrammerShell.Plugins.RealProgrammer/plugin.json",
+    "bytes": 168,
+    "sha256": "72b51a0c5f370594edc44b78c46673d15ee6b64293444a895749fff15e8e69a4"
+  },
+  {
+    "path": "四相机版/src/plugins/devices/ProgrammerShell.Plugins.SampleProgrammer/MVSDK.dll",
+    "bytes": 119808,
+    "sha256": "53030588fc4c0e65e2e75517dc0b9e28f2fdf12fd77cac370228ba3d99bf0cbe"
+  },
+  {
+    "path": "四相机版/src/plugins/devices/ProgrammerShell.Plugins.SampleProgrammer/Plugin.cs",
+    "bytes": 477,
+    "sha256": "307738e3393c3f5b8056c12ec19c33bb3ee9cbda17e14129304ecfd5c07b987b"
+  },
+  {
+    "path": "四相机版/src/plugins/devices/ProgrammerShell.Plugins.SampleProgrammer/ProgrammerShell.Plugins.SampleProgrammer.csproj",
+    "bytes": 1333,
+    "sha256": "e5a7ff232d0f7b6cd6d5d9245d01e864418f6180ef91cecef9e9d3fd95883904"
+  },
+  {
+    "path": "四相机版/src/plugins/devices/ProgrammerShell.Plugins.SampleProgrammer/SampleProgrammerFactory.cs",
+    "bytes": 1943,
+    "sha256": "a0fd051d18180a50047232a014856ba7ee08b87a4ad30e0f5d61ab8e4c46bc6c"
+  },
+  {
+    "path": "四相机版/src/plugins/devices/ProgrammerShell.Plugins.SampleProgrammer/SampleProgrammerPlugin.cs",
+    "bytes": 569,
+    "sha256": "10bb97bce878eab8d08f59ee2b4423ca44df2d55b3a5adde5534757cea0d6824"
+  },
+  {
+    "path": "四相机版/src/plugins/devices/ProgrammerShell.Plugins.SampleProgrammer/SimulatedCamera.cs",
+    "bytes": 10571,
+    "sha256": "dfe222d80f2805c65e6e22750e68c348feb7bbc38fef2d1e8f7d21dd60cab718"
+  },
+  {
+    "path": "四相机版/src/plugins/devices/ProgrammerShell.Plugins.SampleProgrammer/SimulatedProgrammer.cs",
+    "bytes": 1922,
+    "sha256": "f8e357060de158d32d0a1095aee1e2cbad3a78bc96f6756b01699b4006a1f096"
+  },
+  {
+    "path": "四相机版/src/plugins/devices/ProgrammerShell.Plugins.SampleProgrammer/plugin.json",
+    "bytes": 189,
+    "sha256": "d5b64684921a5707dd4eeacf64bcabd60e264b3841a408f61cbdd1ce08fbeb1a"
+  }
+]

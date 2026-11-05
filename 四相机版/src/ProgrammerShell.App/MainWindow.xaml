@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="ProgrammerShell.App.MainWindow"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:local="clr-namespace:ProgrammerShell.App"
+ mc:Ignorable="d"
+ Title="缺陷检测系统(模板匹配)"
+ Width="1920" Height="1440"
+ WindowStartupLocation="CenterScreen"
+ WindowState="Maximized">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="220"/>
+        </Grid.RowDefinitions>
+
+        <!-- Main area -->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="520"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Left header -->
+            <DockPanel Grid.Row="0" Grid.Column="0" LastChildFill="False" Margin="0,0,0,8">
+                <Button x:Name="DeviceButton" Content="Device" Width="120" Height="32" Click="DeviceButton_Click"/>
+            </DockPanel>
+
+            <Border Grid.Row="0" Grid.Column="2"/>
+
+            <!-- Left controls (camera + PLC fit without scrolling) -->
+            <GroupBox Grid.Row="1" Grid.Column="0" Header="" Padding="10">
+                <Viewbox Stretch="Uniform" StretchDirection="DownOnly">
+                    <StackPanel Height="707" Width="697" TextElement.FontSize="16">
+
+                        <!-- helper style: consistent button height -->
+                        <StackPanel.Resources>
+                            <Style TargetType="Button">
+                                <Setter Property="Height" Value="34"/>
+                                <Setter Property="FontSize" Value="16"/>
+                            </Style>
+                        </StackPanel.Resources>
+
+                        <!-- Cameras -->
+                        <GroupBox Header="&#x76F8;&#x673A;&#x63A7;&#x5236;" Padding="10" Margin="0,0,0,10" Width="712" Height="1058">
+                            <ItemsControl ItemsSource="{Binding Cameras}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="4" Padding="10" Margin="0,0,0,10">
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="10"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="10"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                </Grid.RowDefinitions>
+
+                                                <Grid Grid.Row="0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="10"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+
+                                                    <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" MinWidth="260">
+                                                        <CheckBox Content="{Binding Title}" Margin="0,0,10,0" FontSize="14" IsChecked="{Binding IsChecked}"/>
+                                                        <TextBlock Text="{Binding StatusText}" Foreground="#1E88E5" VerticalAlignment="Center" FontSize="14"/>
+                                                    </StackPanel>
+                                                    <Button Grid.Column="2" Content="&#x8F6F;&#x89E6;&#x53D1;&#x4E00;&#x6B21;" Command="{Binding SoftTriggerCommand}" IsEnabled="{Binding SoftTriggerEnabled}"/>
+                                                </Grid>
+
+                                                <Grid Grid.Row="2">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="10"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Button Grid.Column="0" Content="&#x5F00;&#x59CB;&#x91C7;&#x96C6;" Command="{Binding StartCommand}" IsEnabled="{Binding StartEnabled}"/>
+                                                    <Button Grid.Column="2" Content="&#x505C;&#x6B62;&#x91C7;&#x96C6;" Command="{Binding StopCommand}" IsEnabled="{Binding StopEnabled}"/>
+                                                </Grid>
+
+                                                <Grid Grid.Row="4">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="10"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+
+                                                    <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                                                        <TextBlock Text="&#x91C7;&#x96C6;&#x6B21;&#x6570;:" VerticalAlignment="Center"/>
+                                                        <TextBlock Text="{Binding CaptureCount}" Margin="8,0,0,0" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                                                    </StackPanel>
+
+                                                    <Button Grid.Column="2" Content="&#x8BA1;&#x6570;&#x590D;&#x4F4D;" Command="{Binding ResetCountCommand}" IsEnabled="{Binding ResetEnabled}"/>
+                                                </Grid>
+                                            </Grid>
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </GroupBox>
+
+                    </StackPanel>
+                </Viewbox>
+            </GroupBox>
+
+            <!-- Right:2x2 camera preview -->
+            <Grid Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" Background="#F3F3F3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <Viewbox Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Border Width="360" Height="240" Background="#666" ClipToBounds="True">
+                            <Grid>
+                                <Image x:Name="CameraImage1" Stretch="UniformToFill" SnapsToDevicePixels="True" UseLayoutRounding="True"/>
+                                <Border Background="#66000000" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="6,2" Margin="6">
+                                    <TextBlock Text="&#x76F8;&#x673A;1" Foreground="White" FontWeight="SemiBold"/>
+                                </Border>
+                                <Border Background="#66000000" HorizontalAlignment="Right" VerticalAlignment="Top" Padding="6,2" Margin="6">
+                                    <TextBlock x:Name="Camera1ResultText" Foreground="White" FontWeight="SemiBold"/>
+                                </Border>
+                            </Grid>
+                        </Border>
+                    </Viewbox>
+                </Grid>
+
+                <Grid Grid.Row="0" Grid.Column="2">
+                    <Viewbox Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Border Width="360" Height="240" Background="#666" ClipToBounds="True">
+                            <Grid>
+                                <Image x:Name="CameraImage2" Stretch="UniformToFill" SnapsToDevicePixels="True" UseLayoutRounding="True"/>
+                                <Border Background="#66000000" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="6,2" Margin="6">
+                                    <TextBlock Text="&#x76F8;&#x673A;2" Foreground="White" FontWeight="SemiBold"/>
+                                </Border>
+                                <Border Background="#66000000" HorizontalAlignment="Right" VerticalAlignment="Top" Padding="6,2" Margin="6">
+                                    <TextBlock x:Name="Camera2ResultText" Foreground="White" FontWeight="SemiBold"/>
+                                </Border>
+                            </Grid>
+                        </Border>
+                    </Viewbox>
+                </Grid>
+
+                <Grid Grid.Row="2" Grid.Column="0">
+                    <Viewbox Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Border Width="360" Height="240" Background="#666" ClipToBounds="True">
+                            <Grid>
+                                <Image x:Name="CameraImage3" Stretch="UniformToFill" SnapsToDevicePixels="True" UseLayoutRounding="True"/>
+                                <Border Background="#66000000" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="6,2" Margin="6">
+                                    <TextBlock Text="&#x76F8;&#x673A;3" Foreground="White" FontWeight="SemiBold"/>
+                                </Border>
+                                <Border Background="#66000000" HorizontalAlignment="Right" VerticalAlignment="Top" Padding="6,2" Margin="6">
+                                    <TextBlock x:Name="Camera3ResultText" Foreground="White" FontWeight="SemiBold"/>
+                                </Border>
+                            </Grid>
+                        </Border>
+                    </Viewbox>
+                </Grid>
+
+                <Grid Grid.Row="2" Grid.Column="2">
+                    <Viewbox Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Border Width="360" Height="240" Background="#666" ClipToBounds="True">
+                            <Grid>
+                                <Image x:Name="CameraImage4" Stretch="UniformToFill" SnapsToDevicePixels="True" UseLayoutRounding="True"/>
+                                <Border Background="#66000000" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="6,2" Margin="6">
+                                    <TextBlock Text="&#x76F8;&#x673A;4" Foreground="White" FontWeight="SemiBold"/>
+                                </Border>
+                                <Border Background="#66000000" HorizontalAlignment="Right" VerticalAlignment="Top" Padding="6,2" Margin="6">
+                                    <TextBlock x:Name="Camera4ResultText" Foreground="White" FontWeight="SemiBold"/>
+                                </Border>
+                            </Grid>
+                        </Border>
+                    </Viewbox>
+                </Grid>
+
+                <Border Grid.Row="1" Grid.ColumnSpan="3" Background="#F3F3F3"/>
+                <Border Grid.Column="1" Grid.RowSpan="3" Background="#F3F3F3"/>
+            </Grid>
+        </Grid>
+
+        <!-- Bottom: PLC logs -->
+        <Grid Grid.Row="1" Margin="0,10,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <GroupBox Grid.Row="0" Grid.ColumnSpan="3" Header="PLC&#x8FDE;&#x63A5;" Padding="10" Margin="0,0,0,10">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock VerticalAlignment="Center" Margin="0,0,8,0" Text="IP:"/>
+                    <TextBox x:Name="PlcIpTextBox" Width="160" Margin="0,0,16,0" Text="192.168.0.10"/>
+                    <TextBlock VerticalAlignment="Center" Margin="0,0,8,0" Text="&#x7AEF;&#x53E3;:"/>
+                    <TextBox x:Name="PlcPortTextBox" Width="80" Margin="0,0,16,0" Text="502"/>
+                    <Button x:Name="PlcConnectButton" Content="PLC&#x8FDE;&#x63A5;" Height="34" MinWidth="140" Click="PlcConnectButton_Click"/>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Grid.Row="1" Grid.Column="0" Header="PLC RX" Padding="10">
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,8">
+                        <Button Width="90" Height="30" Content="&#x6E05;&#x7A7A;" Click="ClearPlcRxLog_Click"/>
+                    </StackPanel>
+                    <TextBox x:Name="PlcRxLogTextBox" FontFamily="Consolas" IsReadOnly="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap"/>
+                </DockPanel>
+            </GroupBox>
+
+            <GroupBox Grid.Row="1" Grid.Column="2" Header="PLC TX" Padding="10">
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,8">
+                        <Button Width="90" Height="30" Content="&#x6E05;&#x7A7A;" Click="ClearPlcTxLog_Click"/>
+                    </StackPanel>
+                    <TextBox x:Name="PlcTxLogTextBox" FontFamily="Consolas" IsReadOnly="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap"/>
+                </DockPanel>
+            </GroupBox>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+<OutputType>WinExe</OutputType>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>ProgrammerShell.App</AssemblyName>
+    <PlatformTarget>x86</PlatformTarget>
+    <Platforms>AnyCPU;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProgrammerShell.Core\ProgrammerShell.Core.csproj" />
+    <ProjectReference Include="..\features\ProgrammerShell.Features.Flasher\ProgrammerShell.Features.Flasher.csproj" />
+    <ProjectReference Include="..\features\ProgrammerShell.Features.Inspection\ProgrammerShell.Features.Inspection.csproj" />
+
+    <!-- Build plugin projects so they copy themselves to app output (app/plugins/**) -->
+    <ProjectReference Include="..\plugins\devices\ProgrammerShell.Plugins.SampleProgrammer\ProgrammerShell.Plugins.SampleProgrammer.csproj" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\plugins\devices\ProgrammerShell.Plugins.RealProgrammer\ProgrammerShell.Plugins.RealProgrammer.csproj" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+    <PackageReference Include="OpenCvSharp4" Version="4.10.0.20240616" />
+    <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.10.0.20240616" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\LedDetection\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="inspection.settings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+</Project>
